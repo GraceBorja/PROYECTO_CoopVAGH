@@ -5,12 +5,23 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_ubicanos.*
 
-class Ubicanos : AppCompatActivity() {
+class Ubicanos : AppCompatActivity() , OnMapReadyCallback {
+    private lateinit var mMap: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ubicanos)
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
 
         rvContactanos.layoutManager = LinearLayoutManager(this)
         rvContactanos.adapter = UbicanosAdapter(cargarContacto(),this)
@@ -50,5 +61,15 @@ class Ubicanos : AppCompatActivity() {
         lista.add(Contacto(R.drawable.smartphone,"Teléfono","0985412546"))
         lista.add(Contacto(R.drawable.mail,"Correo Electrónico","coop.vagh@gmail.com"))
         return lista
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+
+        // Add a marker in Sydney and move the camera
+        val coopvagh = LatLng(-0.22010777407389526, -78.51126256354084)
+        mMap.addMarker(MarkerOptions().position(coopvagh).title("Coop. VAGH"))
+        // mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coopvagh, 17F))
     }
 }
