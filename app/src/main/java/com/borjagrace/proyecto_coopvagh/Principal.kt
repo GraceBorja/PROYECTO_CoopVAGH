@@ -48,10 +48,6 @@ class Principal : AppCompatActivity() {
         }
 
 
-
-
-
-
     }
 
 

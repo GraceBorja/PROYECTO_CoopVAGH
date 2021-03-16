@@ -45,6 +45,15 @@
     <string name="textPass1">***********</string>
     <string name="textContac">Contáctanos</string>
     <string name="textMapa">MAPA</string>
+    <string name="texCheckBoxRecordoarme">Recuerdame</string>
     <string name="title_activity_maps">Map</string>
+    <string name="editTextTextEmailAddress_hint">Ingrese su usuario</string>
+    <string name="email_NoValido">Usuario no valido</string>
+    <string name="editTextPassword_hint">Ingrese su contraseña</string>
+    <string name="password_longitudNoValida">La contraseña debe de ser de minimo de 8 caracteres</string>
+    <string name="textRegistroUsuario">Usuario</string>
+    <string name="textRegistroContraseña">Contraseña</string>
+    <string name="textRegistroContraseña2">Contraseña</string>
+    <string name="password_noidenty">Las contraseñas no coinciden</string>
 
 </resources>

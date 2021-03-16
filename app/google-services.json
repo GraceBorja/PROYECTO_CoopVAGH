@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "246991419118",
+    "firebase_url": "https://coop-vagh-default-rtdb.firebaseio.com",
+    "project_id": "coop-vagh",
+    "storage_bucket": "coop-vagh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246991419118:android:e733ab58460de88d51a5ff",
+        "android_client_info": {
+          "package_name": "com.borjagrace.proyecto_coopvagh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246991419118-43btvmn501pg4tlmrv97kkr3c2qr723q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHdSn815GMv_aHvCA6kj2Z0QY0AEMVVzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246991419118-43btvmn501pg4tlmrv97kkr3c2qr723q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
