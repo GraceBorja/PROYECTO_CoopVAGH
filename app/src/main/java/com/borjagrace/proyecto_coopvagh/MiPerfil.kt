@@ -32,7 +32,6 @@ class MiPerfil : AppCompatActivity() {
         apellidos = findViewById<TextView>(R.id.textView11)
         correo = findViewById<TextView>(R.id.textView14)
         contraseña = findViewById<TextView>(R.id.textView16)
-        saveButton = findViewById<Button>(R.id.btnModificar)
 
         db = FirebaseFirestore.getInstance()
 
@@ -48,7 +47,6 @@ class MiPerfil : AppCompatActivity() {
         val botonUbica5 = findViewById<ImageButton>(R.id.buttonLocation6)
         val botonSal5 = findViewById<ImageButton>(R.id.buttonExit6)
         val botonCasa5 = findViewById<ImageButton>(R.id.buttonHome6)
-        val lastName = findViewById<EditText>(R.id.nombres1)
        // val firstName = findViewById<EditText>(R.id.)
         leer()
         botonAntes5.setOnClickListener {
