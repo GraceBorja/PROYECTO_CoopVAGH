@@ -3,18 +3,14 @@ package com.borjagrace.proyecto_coopvagh
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_movimientos.*
 
 class Movimientos : AppCompatActivity() {
 
-    var movimientos = arrayListOf<Movimiento>()
-    var movimientosIdDocumentos = ArrayList<String>()
-    lateinit var listViewMovimientos : ListView
-    var idDocumentoMovimientoSeleccionado : String = ""
-    var selectedMovimientoPosition = 0
+
     lateinit var db : FirebaseFirestore
 
 
@@ -24,8 +20,9 @@ class Movimientos : AppCompatActivity() {
 
         db = FirebaseFirestore.getInstance()
 
-        //rvDatosCredito.layoutManager = LinearLayoutManager(this)
-        //rvDatosCredito.adapter = MovimientosAdapter(generarMovimientos(),this)
+        rvDatosCredito.layoutManager = LinearLayoutManager(this)
+        rvDatosCredito.adapter = MovimientosAdapter(generarMovimientos(),this)
+
         val intento62 = Intent(this,Principal::class.java)
         val intento7 = Intent(this,MovimientosFecha::class.java)
         val intento8 = Intent(this,MiPerfil::class.java)
@@ -40,10 +37,6 @@ class Movimientos : AppCompatActivity() {
 
 
         val username = intent.getStringExtra(LOGIN_KEY) ?: "" // Get the support action bar
-
-        consultarMovimientos()
-
-
 
 
 
@@ -74,41 +67,43 @@ class Movimientos : AppCompatActivity() {
 
     }
 
-//    private fun generarMovimientos() : ArrayList<Movimiento>{
-//        var lista = ArrayList<Movimiento>()
-//        lista.add(Movimiento("01 enero 2021","Detalle 1",5.00,5.00))
-//        lista.add(Movimiento("01 enero 2021","Detalle 2",10.00,15.00))
-//        lista.add(Movimiento("01 enero 2021","Detalle 3",3.00,18.00))
-//        lista.add(Movimiento("01 enero 2021","Detalle 4",5.00,23.00))
-//        lista.add(Movimiento("01 enero 2021","Detalle 5",5.00,28.00))
-//        lista.add(Movimiento("01 enero 2021","Detalle 6",4.00,32.00))
-//
-//        return lista
-//    }
+    private fun generarMovimientos() : ArrayList<Movimiento>{
+        var lista = ArrayList<Movimiento>()
+        lista.add(Movimiento("01 enero 2021","Detalle 1",5.00,5.00))
+        lista.add(Movimiento("01 enero 2021","Detalle 2",10.00,15.00))
+        lista.add(Movimiento("01 enero 2021","Detalle 3",3.00,18.00))
+        lista.add(Movimiento("01 enero 2021","Detalle 4",5.00,23.00))
+        lista.add(Movimiento("01 enero 2021","Detalle 5",5.00,28.00))
+        lista.add(Movimiento("01 enero 2021","Detalle 6",4.00,32.00))
 
-    fun consultarMovimientos() {
-
-        val username1 = intent.getStringExtra(LOGIN_KEY) ?: "" // Get the support action bar
-        db.collection("Movimiento")
-            .get()
-            .addOnSuccessListener { result ->
-                movimientos.clear()
-                movimientosIdDocumentos.clear()
-                for (document in result) {
-                    val movimiento = document.toObject(Movimiento::class.java)
-                    if (movimiento.idUsuario == username1){
-                        movimientos.add(movimiento)
-                        movimientosIdDocumentos.add(document.id)
-                    }
-
-                }
-                //Poblar en ListView información usando mi adaptador
-                val movimientoAdaptador = MovimientosAdapter(this, movimientos)
-                listViewMovimientos.adapter = movimientoAdaptador
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(this, "Error al obtener datos de contactos:-> {$e.message}", Toast.LENGTH_LONG).show()
-            }
-
+        return lista
     }
+
+//    fun consultarMovimientos(){
+//
+//        val username1 = intent.getStringExtra(LOGIN_KEY) ?: "" // Get the support action bar
+//        db.collection("Movimiento")
+//            .get()
+//            .addOnSuccessListener { result ->
+//                movimientos.clear()
+//                movimientosIdDocumentos.clear()
+//                for (document in result) {
+//                    val movimiento = document.toObject(Movimiento::class.java)
+//                    if (movimiento.idUsuario == username1){
+//                        movimientos.add(movimiento)
+//                        movimientosIdDocumentos.add(document.id)
+//                    }
+//                }
+//                //Poblar en ListView información usando mi adaptador
+//                val movimientoAdaptador = MovimientosAdapter(this, movimientos)
+//                listViewMovimientos.adapter = movimientoAdaptador
+//
+//
+//            }
+//            .addOnFailureListener { e ->
+//                Toast.makeText(this, "Error al obtener datos de contactos:-> {$e.message}", Toast.LENGTH_LONG).show()
+//            }
+//
+//
+//    }
 }
