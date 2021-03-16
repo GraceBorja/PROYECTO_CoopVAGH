@@ -175,39 +175,17 @@
         app:layout_constraintEnd_toEndOf="@+id/toolbar4"
         app:layout_constraintStart_toStartOf="@+id/toolbar4"
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />
-    <EditText
-        android:id="@+id/nombres1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Nombres"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
-        app:layout_constraintStart_toStartOf="@+id/toolbar4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:text="@string/textApellidos"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="@+id/toolbar4"
         app:layout_constraintStart_toStartOf="@+id/toolbar4"
         app:layout_constraintTop_toBottomOf="@+id/nombres" />
-
-    <Button
-        android:id="@+id/btnModificar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/textModificar"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
         android:id="@+id/textView13"
@@ -257,31 +235,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
-    <Button
-        android:id="@+id/btnModificarEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/textModificar"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toTopOf="@+id/textView14" />
-
-    <Button
-        android:id="@+id/btnModificarContra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/textModificar"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        app:layout_constraintEnd_toEndOf="@+id/btnModificarEmail"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMiPerfil"
         android:layout_width="392dp"
@@ -289,7 +242,6 @@
         app:layout_constraintBottom_toTopOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
