@@ -4,10 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
 class Principal : AppCompatActivity() {
+
+    lateinit var textUsuario : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
@@ -27,6 +31,19 @@ class Principal : AppCompatActivity() {
         val botonUbica = findViewById<ImageButton>(R.id.buttonLocation)
         val botonSal = findViewById<ImageButton>(R.id.buttonExit1)
 
+        textUsuario = findViewById(R.id.textViewUsuarioPrincipal)
+
+
+        val username = intent.getStringExtra(LOGIN_KEY) ?: "" // Get the support action bar
+        textUsuario.append(username.substringBefore("@"))
+
+        intento1.putExtra(LOGIN_KEY,username)
+        intento2.putExtra(LOGIN_KEY,username)
+        intento3.putExtra(LOGIN_KEY,username)
+        intento4.putExtra(LOGIN_KEY,username)
+        intento5.putExtra(LOGIN_KEY,username)
+        intento6.putExtra(LOGIN_KEY,username)
+        intento61.putExtra(LOGIN_KEY,username)
 
         botonMov.setOnClickListener {
             startActivity(intento1)
